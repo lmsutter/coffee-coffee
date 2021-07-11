@@ -13,28 +13,50 @@
   <meta property="og:image" content="">
 
   <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
+  <link rel="apple-touch-icon" href="./images/favicon.ico">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/all.css"
+
   <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
+  <div class="home-page-wrapper">
+    <img class="home-mobile-img" src="./images/big-logo.png" alt="segue logo">
+    <i class="fas fa-camera"></i>
+    <i class="fas fa-bars"></i>
+    <div class="home-header">
+      <img class="logo-img" src="./images/big-logo.png" alt="segue logo">
+      <div class="card">
+        <ul class="nav home-nav">
+          <li title="Home"><a class="link" href="./index.html">Home</a></li>
+          <li title="Mobile Order"><a class="link" href="./pages/mobile-order.html">Mobile Order</a></li>
+          <li title="Drinks & Eats"><a class="link" href="*">Drinks & Eats</a></li>
+          <li title="News"><a class="link" href="*">News</a></li>
+          <li title="Location & Hours"><a class="link" href="*">Location & Hours</a></li>
+        </ul>
+      </div>
+      <p class="address" >Segue <br> 811 11th Ave S, Minneapolis, MN 55404</p>
+    </div>
+    <div class="splash-main">
+  
+    </div>
+  </div>
 
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
+  <script defer src="/js/all.js"></script>
   <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
   <script src="js/app.js"></script>
 
-  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
-  <script>
-    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set', 'anonymizeIp', true); ga('set', 'transport', 'beacon'); ga('send', 'pageview')
-  </script>
-  <script src="https://www.google-analytics.com/analytics.js" async></script>
+
 </body>
 
 </html>
