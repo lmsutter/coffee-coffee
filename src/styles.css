@@ -13,157 +13,128 @@ html {
     margin: 0;
 }
 
-/* Typogrophy */
- 
-html,
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-    
+    min-height: 100%;
 }
 
-.nav {
+/* Typography */
+
+body,
+html {
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+.home-tagline {
+    text-align: center;
+    font-size: 1.3rem;
+}
+
+.menu-item {
     list-style-type: none;
+    text-align: center;
+}
+
+.menu-item:last-of-type {
+    border: none;
+}
+
+
+.link {
+    text-decoration: none;
+    color: white;
     margin: 0;
 }
 
-.nav li {
-    position: relative;
-    margin-bottom: 2em;
-    text-align: center;
-    
-    border-radius: 1em;
-    padding: .5em 1em;
-    box-sizing: border-box;
-}
-
-.nav a {
-    text-align: center;
-    text-decoration: none;
-    color: white;
-}
-
-.nav li:hover {
-    /* text-shadow: 1px 1px white; */
-    /* transform: scale(1.1); */
-    box-shadow: -3px -3px 5px rgba(255, 255, 255, .5),
-                /* inset 2px 2px 2px white, */
-                5px 5px 8px rgba(0, 0, 0, .5);
-
-}
-
-.nav li:nth-last-of-type {
-    margin-bottom: 0;
-}
-
-.address {
-    text-align: center;
-    font-size: .7em;
-}
 
 /* Layout */
-
-body {
-    height: 100vh;
-    width: 100vw;
-}
 
 .home-page-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
 }
 
 .logo-img {
     display: none;
 }
 
+.home-tagline {
+    padding: 0 3rem;
+    margin-top: 3rem;
+}
+
 .home-mobile-img {
-    width: 80%;
-    margin-top: 2em;
+    width: 75%;
+    max-width: 300px;
+    margin-bottom: 2em;
 }
-
-.home-header {
-    display: none;
-    padding: 1em;
-    align-items: center;
-    flex-direction: column;
-}
-
-.card {
-    margin-bottom: 4em;
-    margin-top: 3em;
-    width: 70%;
-    max-width: 350px;
-
-}
-
-.home-nav {
-    padding: 2em;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-}
-
-@media (min-width: 900px) {
-
-    .home-mobile-img-container {
-        display: none;
-    }
-
-    .home-page-wrapper {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .home-header {
-        width: 20%;
-        min-width: 300px;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        box-sizing: border-box;
-    }
-
-    .logo-img {
-        display: block;
-        width: 95%;
-    }
-    
-    .card {
-        margin: 1em;
-        min-width: 250px;
-        padding: 1em;
-    }
-
-
-}
-
-/* Other */
-.home-page-wrapper {
-    background-image: url(./images/splash_background.JPG);
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
-    width: 100vw;
-    height: 100vh;
-    
-}
-
-.other-page-wrapper {
-    background: linear-gradient(179.97deg, var(--light-grad) 0.03%, var(--dark-grad) 90.31%);;
-
-}
-
-.home-header {
-    background: linear-gradient(179.97deg, var(--light-grad) 0.03%, var(--dark-grad) 90.31%);;
-    
-}
-
-.card {
+.mobile-footer {
     background: var(--main-color);
-    border-radius: 1em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+    margin: 0;
+    padding: 1em;
+    box-sizing: border-box;
 }
+
+.menu-item {
+    border-right: 2px solid rgba(255, 255, 255, .4);
+    height: 50px;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (min-width: 750px) {
+    .mobile-footer {
+        position: relative;
+    }
+}
+/* Other */
+
+.home-page-wrapper {
+    background: url(./images/splash_background.JPG);
+    background-color:rgba(0, 0, 0, .4);
+    background-position: top left;
+    background-blend-mode: overlay;
+}
+
+.home-tagline {
+    position: relative;
+}
+
+
+.home-tagline::before,
+.home-tagline::after {
+    content: "";
+    height: 4px;
+    width: 2rem;
+    background:rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+}
+
+.home-tagline::before {
+    
+    left: 15px;
+}
+
+.home-tagline::after {
+    right: 15px;
+}
+
