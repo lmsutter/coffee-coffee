@@ -1,3 +1,5 @@
+const { off } = require("gulp");
+
 module.exports = {
   env: {
     browser: true,
@@ -10,7 +12,7 @@ module.exports = {
     sourceType: "module"
   },
   rules: {
-    indent: ["error", 2],
+    indent: off,
     quotes: ["error", "single"],
     semi: ["error", "always"]
   }
