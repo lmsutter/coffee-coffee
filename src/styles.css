@@ -24,6 +24,9 @@ html {
     font-family: "Poppins", sans-serif;
     color: white;
 }
+h1 {
+    font-size: 1.3rem;
+}
 
 .home-tagline {
     text-align: center;
@@ -44,6 +47,7 @@ html {
     text-decoration: none;
     color: white;
     margin: 0;
+   
 }
 
 
@@ -63,6 +67,7 @@ html {
     display: none;
 }
 
+
 .home-tagline {
     padding: 0 3rem;
     margin-top: 3rem;
@@ -73,7 +78,7 @@ html {
     max-width: 300px;
     margin-bottom: 2em;
 }
-.mobile-footer {
+.nav {
     background: var(--main-color);
     width: 100%;
     display: flex;
@@ -98,9 +103,27 @@ html {
     justify-content: center;
 }
 
+.full-page {
+    display: none;
+}
+
+.nav-item-bigger {
+    flex: 4;
+}
+
+/* full page layout */
+
 @media (min-width: 750px) {
-    .mobile-footer {
+    .nav {
         position: relative;
+    }
+
+    .full-page {
+        display: inherit;
+    }
+
+    .header-logo {
+        height: 140%;
     }
 }
 /* Other */
