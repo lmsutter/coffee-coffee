@@ -2,7 +2,7 @@
     --main-color: #3E4543;
     --accent-color: #443F44;
     --light-grad: #666B67;
-    --dark-grad: #374948;
+    --dark-grad: #273635;
     font-size: 20px;
 }
 
@@ -25,7 +25,11 @@ html {
     color: white;
 }
 h1 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+}
+
+h2 {
+    margin: 0;
 }
 
 .home-tagline {
@@ -38,16 +42,15 @@ h1 {
     text-align: center;
 }
 
-.menu-item:last-of-type {
-    border: none;
-}
-
-
 .link {
     text-decoration: none;
     color: white;
     margin: 0;
-   
+}
+
+.logo-text {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.3em;
 }
 
 
@@ -63,23 +66,38 @@ h1 {
     box-sizing: border-box;
 }
 
-.logo-img {
-    display: none;
-}
-
 
 .home-tagline {
     padding: 0 3rem;
     margin-top: 3rem;
 }
+.logo-bg {
+    width: 300px;
+}
+.logo-text {
+    align-self: flex-start;
+    margin: -.5em 0 -.7em .8em;
 
-.home-mobile-img {
-    width: 75%;
-    max-width: 300px;
-    margin-bottom: 2em;
+}
+
+.logo-text-last {
+    align-self: flex-end;
+    margin: 0 .8em 
+}
+
+.logo-bg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    width: 250px;
+    margin-left: -.9em;
+    margin-top: .4em;
 }
 .nav {
-    background: var(--main-color);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -94,9 +112,9 @@ h1 {
 }
 
 .menu-item {
-    border-right: 2px solid rgba(255, 255, 255, .4);
     height: 50px;
     margin: 0;
+    padding: .3em 1em 0 1em;
     flex-grow: 1;
     display: flex;
     align-items: center;
@@ -107,6 +125,10 @@ h1 {
     display: none;
 }
 
+.full-page * {
+    display: none;
+}
+
 .nav-item-bigger {
     flex: 4;
 }
@@ -114,18 +136,78 @@ h1 {
 /* full page layout */
 
 @media (min-width: 750px) {
+    .home-page-wrapper {
+        justify-content: flex-start;
+    }
     .nav {
         position: relative;
+        justify-content: space-between;
+        align-items: center;
     }
 
     .full-page {
         display: inherit;
     }
 
-    .header-logo {
-        height: 140%;
+    .full-page * {
+        display: inherit;
     }
+
+    .title {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .icon {
+        margin-left: 2em;
+        padding-bottom: .3em;
+    }
+
+    .content {
+        margin-top: 5%;
+        height: 70%;
+        width: 80%;
+        max-width: 1200px;
+        max-height: 650px;
+    }
+
+    .content > * {
+        flex: 1;
+    }
+
+    .info-card {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        padding: 1.5em;
+        margin-left: 4em;
+    }
+
+    .home-tagline {
+        margin-top: 0;
+    }
+
+    .info-header {
+        align-self: flex-start;
+    }
+
+    .info-image {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        margin-bottom: 1em;
+    }
+
 }
+
+
 /* Other */
 
 .home-page-wrapper {
@@ -133,6 +215,8 @@ h1 {
     background-color:rgba(0, 0, 0, .4);
     background-position: top left;
     background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .home-tagline {
@@ -149,7 +233,11 @@ h1 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+}
 
+.link__highlight {
+    background: var(--light-grad);
+    padding: .2em 1em;
 }
 
 .home-tagline::before {
@@ -160,4 +248,49 @@ h1 {
 .home-tagline::after {
     right: 15px;
 }
+
+.nav {
+    background: var(--main-color);
+}
+
+.menu-item {
+    border-right: 2px solid rgba(255, 255, 255, .4);
+}
+
+.logo-bg {
+    background: black;
+    border-radius: 50%;
+    width: 340px;
+    height: 340px;
+}
+
+.info-card {
+    background-color: var(--main-color);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: rgba(255, 255, 255, .8);
+}
+
+.active,
+.link:hover {
+    box-shadow: 0 5px 0 white;
+}
+
+/* Utils */
+
+.remove-border {
+    border: none;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
 
