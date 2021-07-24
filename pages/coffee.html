@@ -32,30 +32,77 @@
 </head>
 
 <body>
-  <div class="coffee-page-wrapper">
-    <ul class="nav">
-      <li class="title nav-item-bigger menu-item remove-border full-page">
-        <h1><a class="link" href="../index.html">Coffee Coffee Mpls</a></h1>
-      </li>
-      <li class="menu-item full-page"><a class="link active" href="./pages/coffee.html">Coffee</a></li>
-      <li class="menu-item"><a class="link" href="*">Social</a></li>
-      <li class="menu-item"><a class="link" href="*">More <br> info</a></li>
-      <li class="menu-item  remove-border"><a class="link link__highlight" href="./src/pages/mobile-order.html">Order <br> Now!</a></li>
-      <li class=" icons nav-item-bigger menu-item full-page remove-border">
-        <a href="*" ><i class="link icon fa-lg fas fa-shopping-cart"></i></a>
-        <a href="*"><i class="link icon fa-lg fas fa-user-circle"></i></a>
-      </li>
-    </ul>
+  <div class="nav-expander"></div>
+  <ul class="nav">
+    <li class="title nav-item-bigger menu-item remove-border full-page"><h1 >Coffee Coffee Mpls</h1></li>
+    <li class="menu-item"><a class="link active" href="./pages/coffee.html">Coffee</a></li>
+    <li class="menu-item"><a class="link" href="*">Social</a></li>
+    <li class="menu-item more-info"><a class="link" href="*">More <br> info</a></li>
+    <li class="menu-item remove-border"><a class="link link__highlight" href="./src/pages/mobile-order.html">Order <br> Now!</a></li>
+    <li class="icons nav-item-bigger menu-item remove-border">
+      <a href="/src/index.html"><i class="link icon fa-md fas fa-home"></i></a>
+      <a><i class="link icon fa-md fas fa-shopping-cart"></i></a>
+      <a><i class="link icon fa-md fas fa-user-circle"></i></a>
+    </li>
+  </ul>
+  <div class="page-wrapper page-wrapper-coffee">
 
-    <div class="content flex-row">
+    <div class="content flex-column">
 
-      
+      <div class="category-frame">
+        <h2>Coffee</h2>
+          <div class="scroll flex-row">
+            <div class="item">
+              <img class="item-image" src="../images/coffee/battle-creek-decaf.jpg" alt="Battle creek decaf blend">
+              <h2 class="item-name">Battle Creek Decaf</h2>
+              <p class="item-cost">$20.00</p>
+              <p class="item-description">Notes of Caramel, Chocolate, & Lime</p>
+            </div>
+            <div class="item">
+              <img class="item-image" src="../images/coffee/battle-creek-house-blend.jpg" alt="Battle creek decaf blend">
+              <h2 class="item-name">Battle Creek House Blend</h2>
+              <p class="item-cost">$20.00</p>
+              <p class="item-description">Notes of Caramel, Chocolate, & Lime</p>
+            </div>
+            <div class="item">
+              <img class="item-image" src="../images/coffee/blue-bottle.jpg" alt="Battle creek decaf blend">
+              <h2 class="item-name">Blue Bottle House Blend</h2>
+              <p class="item-cost">$20.00</p>
+              <p class="item-description">Notes of Caramel, Chocolate, & Lime</p>
+            </div>
+            <div class="item">
+              <img class="item-image" src="../images/coffee/earlybird-coffee.jpg" alt="Battle creek decaf blend">
+              <h2 class="item-name">Early Bird Coffee Light Roast</h2>
+              <p class="item-cost">$20.00</p>
+              <p class="item-description">Notes of Caramel, Chocolate, & Lime</p>
+            </div>
+            <div class="item">
+              <img class="item-image" src="../images/coffee/sweetheart.jpg" alt="Battle creek decaf blend">
+              <h2 class="item-name">Sweetheart Medium Roast</h2>
+              <p class="item-cost">$20.00</p>
+              <p class="item-description">Notes of Caramel, Chocolate, & Lime</p>
+            </div>
+          </div>
+        
+      </div>
+      <div class="category-frame">
+        <h2>Equipment</h2>
+        <div class="scroll flex-row">
+          <div class="item">
+            <img class="item-image" src="../images/coffee/battle-creek-decaf.jpg" alt="Battle creek decaf blend">
+            <h2 class="item-name">Battle Creek Decaf</h2>
+            <p class="item-cost">$20.00</p>
+            <p class="item-description">Notes of Caramel, Chocolate, & Lime</p>
+          </div>
+        </div>
+      </div>
+          
 
     </div>
 
   </div>
    
-  <script defer src="/js/all.js"></script>
+  <script defer src="../js/app.js"></script>
   <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
   <script src="js/app.js"></script>
 </body>
