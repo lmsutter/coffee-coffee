@@ -25,8 +25,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet"> 
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="css/all.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../css/all.css">
 
   <meta name="theme-color" content="#fafafa">
 </head>
@@ -36,40 +36,27 @@
   <ul class="nav">
     <li class="title nav-item-bigger menu-item remove-border full-page"><h1 >Coffee Coffee Mpls</h1></li>
     <li class="menu-item menu-item__highlight"><a class="link link__highlight" href="./src/pages/mobile-order.html">Order <br> Now!</a></li>
-    <li class="menu-item"><a class="link" href="./pages/coffee.html">Beans & <br>Gear</a></li>
-    <li class="menu-item social"><a class="link" href="*">Social</a></li>
-    <li class="menu-item"><a class="link" href="*">More <br> info</a></li>
+    <li class="menu-item"><a class="link active" href="./coffee.html">Beans & <br>Gear</a></li>
+    <li class="menu-item remove-border"><a class="link" href="*">Social</a></li>
+    <li class="menu-item more-info"><a class="link" href="*">More <br> info</a></li>
     <li class="icons nav-item-bigger menu-item remove-border">
-      <i class="active icon link fa-md fas fa-home"></i>
-      <i class="icon link fa-md fas fa-shopping-cart"></i>
-      <i class="icon link fa-md fas fa-user-circle"></i>
+      <a href="/src/index.html"><i class="link icon fa-md fas fa-home"></i></a>
+      <a><i class="link icon fa-md fas fa-shopping-cart"></i></a>
+      <a><i class="link icon fa-md fas fa-user-circle"></i></a>
     </li>
   </ul>
-  <div class="page-wrapper page-wrapper-home">
+  <div class="page-wrapper page-wrapper-cart">
 
-    <div class="content flex-row">
-
-      <div class="tagline-logo-box flex-column">
-        <p class="home-tagline">Your Minneapolis Park Neighborhood coffee shop since 1992.</p>
-        <img class="logo" src="./images/coffeecoffeelogo.png">
-      </div>  
-
-      <div class="full-page info-card flex-column">
-        <img class="info-image" src="images/home-info.jpg" alt="coffee cup">
-        <h2 class="info-header">Welcome!</h2>
-        <p class="">Here at coffee coffee we care about two things above all else: craft and community. We promise to always provide the 
-          most freshly roasted beans with the best ingredients. We also hold this our shop as a safe place for everyone to come 
-          and belong. We hope to see you at Coffee Coffee soon!
-        </p>
-      </div>
+    <div class="content flex-column">
 
     </div>
 
   </div>
    
-  <script defer src="/js/all.js"></script>
+  <script defer src="../js/app.js"></script>
   <script src="js/vendor/modernizr-{{MODERNIZR_VERSION}}.min.js"></script>
   <script src="js/app.js"></script>
+  <script src="/src/js/cart.js"></script>
 </body>
 
 </html>
