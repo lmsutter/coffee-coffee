@@ -201,9 +201,7 @@ button {
     overflow-x: auto;
 }
 
-.grid-wrapper {
-    height: 0;
-}
+
 
 .item {
     min-width: 270px;
@@ -212,7 +210,7 @@ button {
     display: grid;
     margin: 0 1em 0 0;
     display: grid;
-    grid-template-rows: 6fr 1fr 1fr 1fr;
+    grid-template-rows: 50% 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     gap: .3em 1em;
 }
