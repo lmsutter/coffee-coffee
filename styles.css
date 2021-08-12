@@ -78,7 +78,7 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: calc(100% - 50px - 2em);
+    height: calc(100% - 75px - 2em);
     width: 100vw;
     box-sizing: border-box;
 }
@@ -158,13 +158,11 @@ button {
     padding: .2em 1em;
 }
 
-.full-page {
-    display: none;
-}
-
+.full-page,
 .full-page * {
     display: none;
 }
+
 
 .nav-item-bigger {
     flex: 4;
@@ -180,18 +178,19 @@ button {
 
 
 .page-wrapper-coffee .content {
-    max-height: calc(100vh - 50px - 2em);
+    height: calc(100vh - 50px - 2em);
     max-width: 100vw;
-    padding: 1em;
+    padding: .5em;
+ 
 }
  
 
 .category-frame {
-    height: 50%;
     width: 100%;
     margin-bottom: .5em;
     position: relative;
     overflow: hidden;
+    flex: 1;
 }
 
 
