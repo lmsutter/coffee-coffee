@@ -213,6 +213,7 @@ button {
     grid-template-rows: 50% 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr; 
     gap: .3em 1em;
+    height: 100%;
 }
 
 .item-image {
