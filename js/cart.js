@@ -22,20 +22,20 @@ window.addEventListener('load', () => {
   for (item in cartData) {
     contentHTML = contentHTML + `
         <div class="cart-item">
-          <i class="cart-delete fa fa-trash" aria-hidden="true"></i>
+          <i class="cart-delete button-animation fa fa-trash" aria-hidden="true"></i>
           <div class="cart-delete-dialogue">Would you like to remove this item?
             <div class="cart-delete-options">
-              <span class="cart-delete-yes">Yes</span>
-              <span class="cart-delete-no">No</span>
+              <span class="cart-delete-yes button-animation">Yes</span>
+              <span class="cart-delete-no button-animation">No</span>
             </div>
           </div>
           <img class="cart-img" src="${cartData[item].imgURL}" alt="${cartData[item].name}">
           <h2 class="cart-header">${cartData[item].name}</h2>
           <p class="cart-cost">${cartData[item].cost}</p>
-          <span class="cart-arrows">
-            <span class="cart-decrease">-</span>
+          <span class="cart-incrementer">
+            <button class="cart-decrease">-</button>
             <span class="cart-amount-count">${cartData[item].count}</span>
-            <span class="cart-increase">+</span>
+            <button class="cart-increase">+</button>
           </span>
         </div>
       `
