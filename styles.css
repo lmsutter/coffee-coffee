@@ -62,12 +62,11 @@ button {
 }
 
 .item-cost {
-    font-size: .8rem;
+    font-size: .6rem;
 }
 
 .item-info-text {
- font-size: .7rem;   
-
+    font-size: .7rem;
 }
 
 .cart-delete-dialogue {
@@ -237,14 +236,15 @@ button {
     display: grid;
     margin: 0 1em 0 0;
     display: grid;
-    grid-template-rows: 50% 1fr 1fr 1fr;
+    grid-template-rows: 4fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr; 
-    gap: .3em 1em;
+    column-gap: 1em;
     height: 100%;
+    align-content: space-between;
 }
 
 .item-image {
-    height: 100%;
+    max-height: 100%;
     width: 100%;
     object-fit: cover;
     object-position: center;
@@ -256,6 +256,8 @@ button {
     grid-column: 1 / 4;
     grid-row: 3 / 4;
     align-self: center;
+    line-height: 1.2;
+    margin: .3em 0em;
 }
 
 .item-cost {
@@ -501,8 +503,6 @@ button {
     }
 
 
-    /* grid-template-rows: 50% 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;  */
 
     .item {
         max-height: 500px;
@@ -511,7 +511,7 @@ button {
 
     .item-more-info {
         opacity: 0;
-        display:none;
+        display: none;
     }
 
 
@@ -522,7 +522,10 @@ button {
 
     .item-info-text {
         padding: 0;
+        color: rgba(255, 255, 255, 0.7)
     }
+
+    
 
     .item-add-to-cart {
         grid-column: 4 / 5;
@@ -689,6 +692,23 @@ button {
     border: none;
 }
 
+.fa-shopping-cart {
+    position: relative;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    border-radius: 50%;
+    font-size: .7em;
+    width: 1.2em;
+    height: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 
 /* Coffee Page Styling */
@@ -710,17 +730,14 @@ button {
     border: none;
     background-color: var(--dark-grad);
     padding: .3em .5em;
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 .item-add-to-cart {
     background: var(--light-grad);
 }
 
-.item-info-background {
-    background: none;
-    padding: 0;
-}
+
 
 /* Cart Styling */
 .page-wrapper-cart {
@@ -749,6 +766,10 @@ button {
     background: var(--light-grad);
     width: calc(100vw - 1.4em);
     margin-bottom: 1em;
+}
+
+.cart-item:last-of-type {
+    margin-bottom: 0;
 }
 
 .cart-incrementer {
@@ -807,6 +828,10 @@ button {
         scrollbar-color: var(--main-color) rgba(0, 0, 0, .6);
     }
 
+    .item-info-background {
+        background: none;
+    }
+
     /* Cart */
     .page-wrapper-cart .content {
         background: var(--main-color);
@@ -835,7 +860,7 @@ button {
 }
 
 .button-animation:hover,
-.button-animation:focus {
+.button-animation:focus-visible {
     transform: scale(1.06);
 }
 

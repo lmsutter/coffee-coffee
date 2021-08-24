@@ -1,25 +1,38 @@
 //cart page 
+import cartUpdater from './app.js'
+
 
 let totalCalc = () => {
+  let content = document.querySelector('.content')
   let total = 0
   let totalElement = document.querySelector('#cart-total')
   let cartData = JSON.parse(localStorage.getItem('cart'))
   
-  for(item in cartData) {
+  for(let item in cartData) {
     let cost = parseInt(cartData[item].cost.replace(/[$]+/g, ""))
     let count = parseInt(cartData[item].count)
     total += cost * count
   } 
   totalElement.textContent = total
+
+  cartUpdater()
+
+  if (Object.keys(cartData).length === 0 ) {
+    content.style.opacity = '0'
+  }
 }
 
 
 window.addEventListener('load', () => {
   let content = document.querySelector('.content')
-  let cartData = JSON.parse(localStorage.getItem('cart'))
 
-  contentHTML = ''
-  for (item in cartData) {
+
+  let cartData = JSON.parse(localStorage.getItem('cart'))
+  if (Object.keys(cartData).length === 0 ) {
+    content.style.opacity = '0'
+  }
+  let contentHTML = ''
+  for (let item in cartData) {
     contentHTML = contentHTML + `
         <div class="cart-item">
           <i class="cart-delete button-animation fa fa-trash" aria-hidden="true"></i>
@@ -43,59 +56,59 @@ window.addEventListener('load', () => {
   content.innerHTML = contentHTML
   totalCalc()
   
-// Increase and Decrease Cart
+  // Increase and Decrease Cart
 
 
-function counter (e, direction) {
-  let name = e.target.closest('.cart-item').querySelector('.cart-header').textContent
-  let amountCount = e.target.closest('.cart-item').querySelector('.cart-amount-count').textContent
-  let cartData = JSON.parse(localStorage.getItem('cart'))
-  let item = cartData[name]
-  if(direction === 'inc') {
-    item.count = item.count + 1
-  } else if(direction === 'dec' && amountCount === '0') {
-    return
-  } else {item.count = item.count - 1}
-  cartData = {...cartData, [name]: item}
-  e.target.closest('.cart-item').querySelector('.cart-amount-count').textContent = cartData[name].count
-  localStorage.setItem('cart', JSON.stringify(cartData))
-  totalCalc()
-}
+  function counter (e, direction) {
+    let name = e.target.closest('.cart-item').querySelector('.cart-header').textContent
+    let amountCount = e.target.closest('.cart-item').querySelector('.cart-amount-count').textContent
+    let cartData = JSON.parse(localStorage.getItem('cart'))
+    let item = cartData[name]
+    if(direction === 'inc') {
+      item.count = item.count + 1
+    } else if(direction === 'dec' && amountCount === '0') {
+      return
+    } else {item.count = item.count - 1}
+    cartData = {...cartData, [name]: item}
+    e.target.closest('.cart-item').querySelector('.cart-amount-count').textContent = cartData[name].count
+    localStorage.setItem('cart', JSON.stringify(cartData))
+    totalCalc()
+  }
 
 
-let incButtons = document.querySelectorAll('.cart-increase')
-let decButtons = document.querySelectorAll('.cart-decrease')
+  let incButtons = document.querySelectorAll('.cart-increase')
+  let decButtons = document.querySelectorAll('.cart-decrease')
 
-incButtons.forEach(each => each.addEventListener("click", (e) => counter(e, 'inc')))
-decButtons.forEach(each => each.addEventListener('click', (e) => counter(e, 'dec')))
+  incButtons.forEach(each => each.addEventListener("click", (e) => counter(e, 'inc')))
+  decButtons.forEach(each => each.addEventListener('click', (e) => counter(e, 'dec')))
 
-//delete items
-let deleteButtons = document.querySelectorAll('.cart-delete')
-let yesButtons = document.querySelectorAll('.cart-delete-yes')
-let noButtons = document.querySelectorAll('.cart-delete-no')
+  //delete items
+  let deleteButtons = document.querySelectorAll('.cart-delete')
+  let yesButtons = document.querySelectorAll('.cart-delete-yes')
+  let noButtons = document.querySelectorAll('.cart-delete-no')
 
-yesButtons.forEach(button => button.addEventListener('click', (e) => {
-  let item = e.target.closest('.cart-item');
-  let name = item.querySelector('.cart-header').textContent
-  let cartData = JSON.parse(localStorage.getItem('cart'))
-  delete cartData[name]
-  localStorage.setItem('cart', JSON.stringify(cartData))
-  item.remove()
-  totalCalc()
-}))
+  yesButtons.forEach(button => button.addEventListener('click', (e) => {
+    let item = e.target.closest('.cart-item');
+    let name = item.querySelector('.cart-header').textContent
+    let cartData = JSON.parse(localStorage.getItem('cart'))
+    delete cartData[name]
+    localStorage.setItem('cart', JSON.stringify(cartData))
+    item.remove()
+    totalCalc()
+  }))
 
-noButtons.forEach(button => button.addEventListener('click', (e) => {
-  e.target.parentElement.parentElement.style.display = 'none'
-}))
+  noButtons.forEach(button => button.addEventListener('click', (e) => {
+    e.target.parentElement.parentElement.style.display = 'none'
+  }))
 
 
-let deleteDialogue = (e) => {
-  let item = e.target.closest('.cart-item')
-  let dialogue = item.querySelector('.cart-delete-dialogue')
-  dialogue.style.display = "block"
-}
+  let deleteDialogue = (e) => {
+    let item = e.target.closest('.cart-item')
+    let dialogue = item.querySelector('.cart-delete-dialogue')
+    dialogue.style.display = "block"
+  }
 
-deleteButtons.forEach(each => each.addEventListener('click', deleteDialogue))
+  deleteButtons.forEach(each => each.addEventListener('click', deleteDialogue))
 
 
 

@@ -23,6 +23,17 @@ moreInfoButtons.forEach( button => button.addEventListener('click', () => {
 }))
 
 
+function cartUpdater () {
+    let cart = JSON.parse(localStorage.getItem('cart'))
+    let length = 0
+    for (const key in cart) {
+        length += cart[key].count
+    }
+    
+    let cartCount = document.querySelector('.cart-count')
+    cartCount.style.background = length === 0 ? '#783F4E' : '#3F4F78'
+    cartCount.textContent = length
+}
 //add to cart
 let addToCartButtons = document.querySelectorAll('.item-add-to-cart')
 
@@ -46,7 +57,15 @@ addToCartButtons.forEach(button => button.addEventListener('click', e => {
         let updatedItem = {...currentCart[name], count: currentCount + 1}
         localStorage.setItem('cart', JSON.stringify({...currentCart, [name]: updatedItem }))
     }
+
+    cartUpdater()
 }))
 
 
 
+
+window.addEventListener('load', () => {
+   cartUpdater()
+})
+
+export default cartUpdater
