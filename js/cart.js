@@ -9,11 +9,16 @@ let totalCalc = () => {
   let cartData = JSON.parse(localStorage.getItem('cart'))
   
   for(let item in cartData) {
-    let cost = parseInt(cartData[item].cost.replace(/[$]+/g, ""))
+    let cost = parseFloat(cartData[item].cost.replace(/[$]+/g, ""))
     let count = parseInt(cartData[item].count)
     total += cost * count
   } 
-  totalElement.textContent = total
+
+  let formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD'
+  })
+  totalElement.textContent = formatter.format(total)
 
   cartUpdater()
 
