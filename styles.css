@@ -28,7 +28,8 @@ html {
     color: white;
 }
 h1 {
-    font-size: 1.5rem;
+    font-size: .7rem;
+    margin: 0;
 }
 
 
@@ -51,6 +52,7 @@ button {
     color: white;
     margin: 0;
     display: inline;
+    position: relative;
 }
 
 .item-name {
@@ -92,13 +94,16 @@ button {
 
 
 /* Layout */
+.title {
+    display: none;
+}
 
 .page-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    min-height: calc(100% - 75px - 2em);
+    min-height: calc(100vh - 90px);
     width: 100vw;
     box-sizing: border-box;
 }
@@ -118,26 +123,28 @@ button {
 
 .nav {
     width: 100%;
-    display: flex;
-    flex-direction: row;
     box-sizing: border-box;
     position: fixed;
-    align-items: center;
-    justify-content: center;
+    display: flex;
+    grid-template-columns: repeat(3, 33%);
+    grid-template-rows: repeat(2, 50px);
+    align-content: center;
     flex-wrap: wrap;
     bottom: 0;
-    margin: 0;
-    padding: 1em 1em 0 1em;
-    box-sizing: border-box;
-    height: calc(50px + 2em);
+    height: calc(100px + 3em);
+    padding: 1em;
     overflow: hidden;
     z-index: 1;
-    transition: height .2s ease-in;
+    transform: translateY(50%);
 }
 
 
 .nav-open {
-    height: 180px;
+    transform: translateY(0);
+}
+
+.menu-item-beans {
+
 }
 
 .nav-expander {
@@ -161,23 +168,21 @@ button {
 }
 
 .menu-item {
-    height: 50px;
     margin: 0;
-    margin-bottom: 1.3em;
-    padding: .3em 1em .3em 1em;
     flex-grow: 1;
+    display: inline-block;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.menu-item__highlight {
-    padding: 0;
-}
+
 
 .link__highlight {
-    padding: .2em 1em;
+    display: inline-block;
+    padding: .3em 1em;
 }
+
 
 .full-page,
 .full-page * {
@@ -189,16 +194,21 @@ button {
     flex: 4;
 }
 
+.icons {
+    /* grid-column: 3 / 5; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .icon {
-    margin-left: 2em;
-    padding-bottom: .3em;
+    margin-right: 1.3em;
 }
 
 /* Beans & Gear Page Layout*/
 
 
-.page-wrapper-coffee .content {
+.page-wrapper-shopping .content {
     max-height: calc(100vh - 50px - 2em);
     width: 100vw;
     padding: .5em;
@@ -443,10 +453,7 @@ button {
         display: inherit;
     }
 
-    .title {
-        display: flex;
-        justify-content: flex-start;
-    }
+    
 
     .icons {
         display: flex;
@@ -489,7 +496,7 @@ button {
 
     /* Beans & Gear Full Page */
 
-    .page-wrapper-coffee .content {
+    .page-wrapper-shopping .content {
         display: flex;
         flex-direction: row;
     }
@@ -603,44 +610,17 @@ button {
         margin-top: 1em;
     }
 
-    
-
 }
 
 
 /* Styling */
 
-.page-wrapper {
-    background-position: top left;
-    background-blend-mode: overlay;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+
 
 .nav-expander-open ~ .page-wrapper {
     filter: blur(5px);
 }
 
-.page-wrapper-home {
-    background: url(./images/splash_background.JPG);
-    background-color:rgba(0, 0, 0, .4);
-}
-
-.home-tagline {
-    position: relative;
-}
-
-
-.home-tagline::before,
-.home-tagline::after {
-    content: "";
-    height: 4px;
-    width: 2rem;
-    background:rgba(255, 255, 255, .8);
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-}
 
 .link__highlight {
     background: var(--light-grad);
@@ -673,7 +653,7 @@ button {
 
 .active,
 .link:hover {
-    box-shadow: 0 5px 0 white;
+    box-shadow: 0 5px 0 hsla(0, 0%, 100%, .5);
 }
 
 .more-info {
@@ -693,28 +673,39 @@ button {
     position: relative;
 }
 
-.cart-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    border-radius: 50%;
-    font-size: .7em;
-    width: 1.2em;
-    height: 1.2em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* Home Styling */
+
+.page-wrapper-home {
+    background: url(https://res.cloudinary.com/dpjyxuq4d/image/upload/w_auto/f_auto/q_auto/v1630323109/splash_background_mawiiz.jpg);
+    background-color:rgba(0, 0, 0, .4);
+}
+
+.home-tagline {
+    position: relative;
 }
 
 
+.home-tagline::before,
+.home-tagline::after {
+    content: "";
+    height: 4px;
+    width: 2rem;
+    background:rgba(255, 255, 255, .8);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
-/* Coffee Page Styling */
 
-.page-wrapper-coffee {
-    background: url(./images/coffee-background.jpg);
-    background-color: rgba(0, 0, 0, .4);
-    background-blend-mode: overlay;
-    background-position: center;
+/* Order Now Styling */
+.order-now-background {
+    background: url(https://res.cloudinary.com/dpjyxuq4d/image/upload/w_auto/f_auto/q_auto/v1630412152/order-now-background_noxgm9.jpg)
+}
+
+/* Beans & Gear Page Styling */
+
+.beans-and-gear-background {
+    background: url(https://res.cloudinary.com/dpjyxuq4d/image/upload/w_auto/f_auto/q_auto/v1630410794/beans-and-gear-background_h7rmgn.jpg);
 }
 
 .item-info-background {
@@ -727,18 +718,23 @@ button {
     border: none;
     background-color: var(--dark-grad);
     padding: .3em .5em;
-    /* display: inline-block; */
 }
 
 .item-add-to-cart {
     background: var(--light-grad);
 }
 
+.item button {
+    color: hsla(0, 0%, 100%, .8);
+}
 
+.page-wrapper-more-info {
+    background: url(https://res.cloudinary.com/dpjyxuq4d/image/upload/w_auto/f_auto/q_auto/v1630413212/more-info-background_pjeymd.jpg);
+}
 
 /* Cart Styling */
 .page-wrapper-cart {
-    background-image: url(images/cart-background.jpg);
+    background-image: url(https://res.cloudinary.com/dpjyxuq4d/image/upload/w_auto/f_auto/q_auto/v1630323089/cart-background_cr6byv.jpg);
 }
 
 .cart-submit {
@@ -797,6 +793,26 @@ button {
 }
 
 
+.cart-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateY(-50%) translateX(100%);
+    border-radius: 50%;
+    font-size: .8em;
+    padding: .15em;
+   
+}
+
+/* Background over-writes */
+
+.page-wrapper {
+    background-position: center;
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .4);
+}
 
 
 /* Styling media queries */
