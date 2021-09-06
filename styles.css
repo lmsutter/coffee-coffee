@@ -621,6 +621,7 @@ button {
         overflow-x: hidden;
         height: auto;
         min-height: 0;
+        margin-top: 40px;
     }
     
     .cart-submit {
