@@ -52,7 +52,6 @@ button {
     text-decoration: none;
     color: white;
     margin: 0;
-    display: inline;
     position: relative;
 }
 
@@ -146,7 +145,6 @@ button {
 nav {
     position: fixed;
     bottom: 0;
-    /* overflow: hidden; */
     z-index: 1;
     transform: translateY( calc(50px + 1em) );
     transition: transform .3s ease-in;
@@ -180,7 +178,7 @@ nav {
     border-top: 3px solid white;
     margin: 0 auto;
     left: 50%;
-    transform: rotate(45deg) translateY(1em);
+    transform: rotate(45deg) translateX(15px);
     z-index: 2;
 
     transition: transform .2s ease-in, bottom .2s ease-in;
@@ -193,7 +191,6 @@ nav {
 
 .nav-item {
     margin: 0;
-    display: inline-block;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -211,6 +208,9 @@ nav {
     background: var(--light-grad)
 }
 
+.cart-divider {
+    display: none;
+}
 
 
 .link__highlight {
@@ -522,6 +522,7 @@ nav {
 
     .cart-divider {
         order: 1;
+        display: block;
     }
 
     .icons {
@@ -535,7 +536,9 @@ nav {
     .title {
         display: flex;
         justify-content: flex-start;
-        margin-left: 2em;
+        margin: 0 2em;
+        padding: 1rem;
+
     }
 
     .icons {
@@ -557,12 +560,15 @@ nav {
         max-height: 650px;
     }
 
+    .page-wrapper-home .content,
+    .page-wrapper-more-info .content {
+        max-height: 700px;
+        min-height: 0;
+    }
+
 
     .info-card {
         justify-content: space-between;
-        flex-direction: column;
-        align-items: flex-start;
-        align-items: flex-start;
         padding: 1.5em;
         margin-left: 4em;
     }
@@ -820,7 +826,6 @@ nav {
 }
 
 .scroll {
-    /* scroll-behavior: smooth; */
     scroll-snap-type: y mandatory;
 }
 
@@ -992,6 +997,7 @@ nav {
 
 .button-animation {
     transition: transform .06s ease-in;
+    cursor: pointer;
 }
 
 .button-animation:hover,

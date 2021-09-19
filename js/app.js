@@ -1,3 +1,8 @@
+// Cloudinary
+var cl = cloudinary.Cloudinary.new({ cloud_name: 'dpjyxuq4d'})
+console.log(cl)
+cl.responsive()
+
 
 // nav expander 
 let navExpander = document.querySelector('.nav-expander')
