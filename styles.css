@@ -557,6 +557,12 @@ nav {
         max-height: 650px;
     }
 
+    .page-wrapper-home .content,
+    .page-wrapper-more-info .content {
+        max-height: 700px;
+        min-height: 0;
+    }
+
 
     .info-card {
         justify-content: space-between;
